@@ -1,0 +1,1 @@
+# ghost-cos-store
