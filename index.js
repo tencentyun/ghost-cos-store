@@ -16,7 +16,8 @@ class CosStore extends BaseStore {
 
     this.client = new COS({
       SecretId: config.SecretId,
-      SecretKey: config.SecretKey
+      SecretKey: config.SecretKey,
+      UserAgent: 'ghost-cos-store'
     })
     
   }
