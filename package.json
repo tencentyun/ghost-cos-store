@@ -1,0 +1,24 @@
+{
+  "name": "ghost-cos-store",
+  "version": "1.0.0",
+  "description": "GHOST TencentCloud COS Plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tencentyun/ghost-cos-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tencentyun/ghost-cos-store/issues"
+  },
+  "homepage": "https://github.com/tencentyun/ghost-cos-store#readme",
+  "dependencies": {
+    "cos-nodejs-sdk-v5": "^2.11.12",
+    "ghost-storage-base": "^1.0.0"
+  }
+}
