@@ -25,7 +25,7 @@ class CosStore extends BaseStore {
   exists (filename) {
     return new Promise((resolve, reject) => {
       this.client.headObject({
-        ...baseParams,
+        ...this.baseParams,
         Key: this.basePath + filename
       }, (err, data) => {
         if(err) {
@@ -44,7 +44,7 @@ class CosStore extends BaseStore {
   save (filename) {
     return new Promise((resolve, reject) => {
       this.client.putObject({
-        ...baseParams,
+        ...this.baseParams,
         Key: this.basePath + filename
       }, (err, data) => {
         if(err) {
@@ -65,7 +65,7 @@ class CosStore extends BaseStore {
   delete(filename) {
     return new Promise((resolve, reject) => {
       this.client.deleteObject({
-        ...baseParams,
+        ...this.baseParams,
         Key: this.basePath + filename
       }, (err, data) => {
         if(err) {
@@ -80,7 +80,7 @@ class CosStore extends BaseStore {
   read(filename) {
     return new Promise((resolve, reject) => {
       this.client.getObject({
-        ...baseParams,
+        ...this.baseParams,
         Key: this.basePath + filename
       }, (err, data) => {
         if(err) {
