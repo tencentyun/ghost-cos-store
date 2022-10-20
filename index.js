@@ -22,11 +22,11 @@ class CosStore extends BaseStore {
     
   }
 
-  exists (filename) {
+  exists (file) {
     return new Promise((resolve, reject) => {
       this.client.headObject({
         ...this.baseParams,
-        Key: this.basePath + filename
+        Key: this.basePath + file.name
       }, (err, data) => {
         if(err) {
           if(err.code == 404) {
@@ -41,16 +41,17 @@ class CosStore extends BaseStore {
     })
   }
 
-  save (filename) {
+  save (file) {
     return new Promise((resolve, reject) => {
-      this.client.putObject({
+      this.client.uploadFile({
         ...this.baseParams,
-        Key: this.basePath + filename
+        Key: this.basePath + file.name,
+        FilePath: file.path
       }, (err, data) => {
         if(err) {
           reject(this.errorParser(err))   
         }else {
-          resolve(data.Location)
+          resolve('//'+data.Location)
         }
       })
     })
@@ -62,11 +63,11 @@ class CosStore extends BaseStore {
     }    
   }
 
-  delete(filename) {
+  delete(file) {
     return new Promise((resolve, reject) => {
       this.client.deleteObject({
         ...this.baseParams,
-        Key: this.basePath + filename
+        Key: this.basePath + file.name
       }, (err, data) => {
         if(err) {
           reject(this.errorParser(err))   
@@ -77,11 +78,11 @@ class CosStore extends BaseStore {
     })
   }
 
-  read(filename) {
+  read(file) {
     return new Promise((resolve, reject) => {
       this.client.getObject({
         ...this.baseParams,
-        Key: this.basePath + filename
+        Key: this.basePath + file.name
       }, (err, data) => {
         if(err) {
           reject(this.errorParser(err))        
