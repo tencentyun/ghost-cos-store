@@ -30,8 +30,8 @@ In order to replace the storage module, the basic requirements are:
 - Create a new folder named `storage` inside `content/adapters`
 - Clone this repo to `/storage`
 ```
-mkdir -p [ghost/ptah]/content/adapters/storage
-cd [ghost/ptah]/content/adapters/storage
+mkdir -p [ghost/path]/content/adapters/storage
+cd [ghost/path]/content/adapters/storage
 
 git clone https://github.com/tencentyun/ghost-cos-store.git
 ```
