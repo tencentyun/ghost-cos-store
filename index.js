@@ -1,6 +1,5 @@
 const COS = require('cos-nodejs-sdk-v5')
 const BaseStore = require('ghost-storage-base')
-const path = require('path')
 
 class CosStore extends BaseStore {
   
