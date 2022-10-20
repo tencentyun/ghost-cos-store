@@ -20,7 +20,7 @@ This Ghost custom storage module allows you to store media file with TencentClou
  - Create a script named "cos-store.js", content as follow:
  
  ```javascript
-//  content/adapters/storage/cos-store.js
+//  content/adapters/storage/ghost-cos-store.js
 module.exports = require('ghost-cos-store');
  ```
 
