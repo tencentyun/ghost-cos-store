@@ -48,9 +48,9 @@ In your `config.[env].json` file, you'll need to add a new storage block to whic
 ```json
 {
   "storage": {
-    "active": "cos-store",
-    "cos-store": {      
-      "BasePath": "资源路径，不填写默认为根目录",      
+    "active": "ghost-cos-store",
+    "ghost-cos-store": {      
+      "BasePath": "资源路径，如 ghost/ ，不填写默认为根目录",      
       "SecretId": "SecretId，在腾讯云控制台获取",
       "SecretKey": "SecretKey，在腾讯云控制台获取",
       "Bucket": "<BucketName>-<AppId>，如 test-1250000000",
