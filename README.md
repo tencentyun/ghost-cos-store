@@ -54,7 +54,8 @@ In your `config.[env].json` file, you'll need to add a new storage block to whic
       "SecretId": "SecretId，在腾讯云控制台获取",
       "SecretKey": "SecretKey，在腾讯云控制台获取",
       "Bucket": "<BucketName>-<AppId>，如 test-1250000000",
-      "Region": "<Region>，如 ap-chengdu"
+      "Region": "<Region>，如 ap-chengdu",
+      "QueryString": "可带上万象处理参数，如?imageMogr2/format/<format>"
     }
   }
 }

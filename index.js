@@ -13,6 +13,15 @@ class CosStore extends BaseStore {
 
     this.basePath = config.BasePath || '';
 
+    let QueryString = config.QueryString || '';
+    // 兼容配置里首字母有没有写 ? 字符的情况
+    if(QueryString) {
+      if(!QueryString.startsWith("?")) {
+        QueryString = '?' + QueryString;
+      }      
+      this.queryString = QueryString;
+    }
+
     this.client = new COS({
       SecretId: config.SecretId,
       SecretKey: config.SecretKey,
@@ -50,7 +59,7 @@ class CosStore extends BaseStore {
         if(err) {
           reject(this.errorParser(err))   
         }else {
-          resolve('//'+data.Location)
+          resolve('//' + data.Location + this.queryString)
         }
       })
     })
