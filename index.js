@@ -15,12 +15,11 @@ class CosStore extends BaseStore {
 
     let QueryString = config.QueryString || '';
     // 兼容配置里首字母有没有写 ? 字符的情况
-    if(QueryString) {
-      if(!QueryString.startsWith("?")) {
-        QueryString = '?' + QueryString;
-      }      
-      this.queryString = QueryString;
-    }
+    if(QueryString && !QueryString.startsWith("?")) {
+      QueryString = '?' + QueryString;
+    }      
+
+    this.queryString = QueryString;
 
     this.client = new COS({
       SecretId: config.SecretId,
