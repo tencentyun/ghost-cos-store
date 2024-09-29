@@ -1,6 +1,6 @@
 {
   "name": "ghost-cos-store",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "GHOST TencentCloud COS Plugin",
   "main": "index.js",
   "scripts": {
